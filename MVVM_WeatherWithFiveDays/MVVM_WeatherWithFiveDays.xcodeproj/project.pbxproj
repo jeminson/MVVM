@@ -17,6 +17,7 @@
 		A282392521C169F10017D913 /* SearchBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282392421C169F10017D913 /* SearchBarViewController.swift */; };
 		A282392721C16FFD0017D913 /* SearchBarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282392621C16FFD0017D913 /* SearchBarTableViewCell.swift */; };
 		A282394D21C18AFA0017D913 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282394C21C18AFA0017D913 /* HomeTableViewCell.swift */; };
+		A282395121C19C6B0017D913 /* DeailCityWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A282395021C19C6B0017D913 /* DeailCityWeatherViewController.swift */; };
 		A2D9278721C0DA01006F4DD8 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9278621C0DA01006F4DD8 /* CityViewModel.swift */; };
 		A2D9278921C0DB4A006F4DD8 /* CityAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9278821C0DB4A006F4DD8 /* CityAPIHandler.swift */; };
 		A2D9278B21C0E2BF006F4DD8 /* CityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9278A21C0E2BF006F4DD8 /* CityParser.swift */; };
@@ -40,6 +41,7 @@
 		A282392421C169F10017D913 /* SearchBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewController.swift; sourceTree = "<group>"; };
 		A282392621C16FFD0017D913 /* SearchBarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarTableViewCell.swift; sourceTree = "<group>"; };
 		A282394C21C18AFA0017D913 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		A282395021C19C6B0017D913 /* DeailCityWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeailCityWeatherViewController.swift; sourceTree = "<group>"; };
 		A2D9278621C0DA01006F4DD8 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
 		A2D9278821C0DB4A006F4DD8 /* CityAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAPIHandler.swift; sourceTree = "<group>"; };
 		A2D9278A21C0E2BF006F4DD8 /* CityParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityParser.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				A282394C21C18AFA0017D913 /* HomeTableViewCell.swift */,
 				A282392421C169F10017D913 /* SearchBarViewController.swift */,
 				A282392621C16FFD0017D913 /* SearchBarTableViewCell.swift */,
+				A282395021C19C6B0017D913 /* DeailCityWeatherViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 				A2D9278721C0DA01006F4DD8 /* CityViewModel.swift in Sources */,
 				A282394D21C18AFA0017D913 /* HomeTableViewCell.swift in Sources */,
 				A282392521C169F10017D913 /* SearchBarViewController.swift in Sources */,
+				A282395121C19C6B0017D913 /* DeailCityWeatherViewController.swift in Sources */,
 				A282391D21C0F24E0017D913 /* WeatherAPIHandler.swift in Sources */,
 				A2D9278B21C0E2BF006F4DD8 /* CityParser.swift in Sources */,
 				A282392721C16FFD0017D913 /* SearchBarTableViewCell.swift in Sources */,

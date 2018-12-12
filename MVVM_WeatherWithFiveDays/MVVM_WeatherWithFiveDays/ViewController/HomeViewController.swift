@@ -134,16 +134,29 @@ extension HomeViewController: UITableViewDataSource {
         let city = cityViewModel.getSelectedCity(atIndex: indexPath.row)
         cell.selectedCityNameLabel.text = city.cityName!
         
-        SVProgressHUD.show(withStatus: "Loading Image...")
         cityViewModel.getCityImage(cityName: city.cityName!) { (cityImgUrl) in
             DispatchQueue.main.async {
-                SVProgressHUD.dismiss()
                 cell.cityImgView.kf.setImage(with: cityImgUrl as? Resource)
             }
         }
 
-        
+        cell.goToDetailCity.tag = indexPath.row
+        cell.goToDetailCity.addTarget(self, action: #selector(viewCityDetail), for: .touchUpInside)
         
         return cell
+    }
+    
+    @objc func viewCityDetail(_ sender: UIButton) {
+        let cityDetail = cityViewModel.getSelectedCity(atIndex: sender.tag)
+        
+        if let controller = storyboard?.instantiateViewController(withIdentifier: "DetailCityWeatherViewController") as? DetailCityWeatherViewController {
+            
+            controller.cityViewModel.allCityModels = [cityDetail]
+            
+            DispatchQueue.main.async {
+                self.navigationController?.pushViewController(controller, animated: true)
+            }
+        }
+        
     }
 }

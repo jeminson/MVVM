@@ -31,7 +31,9 @@ class CityViewModel {
         return allCityModels[atIndex]
     }
     func getCitySortedByCityName(searchBarText: String) {
-        allCityModels = unSortedAllCityModels.filter({$0.cityName!.uppercased().contains(searchBarText)})
+        DispatchQueue.main.async {
+            self.allCityModels = self.unSortedAllCityModels.filter({$0.cityName!.uppercased().contains(searchBarText)})
+        }
     }
     func getCitySortedByCityNameCancel() {
         allCityModels = unSortedAllCityModels

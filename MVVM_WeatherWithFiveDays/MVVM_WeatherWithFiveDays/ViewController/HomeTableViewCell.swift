@@ -10,6 +10,7 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var goToDetailCity: UIButton!
     @IBOutlet weak var cityImgView: UIImageView!
     @IBOutlet weak var selectedCityNameLabel: UILabel!
     

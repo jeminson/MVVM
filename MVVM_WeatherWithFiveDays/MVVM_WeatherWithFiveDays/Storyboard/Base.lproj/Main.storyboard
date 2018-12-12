@@ -327,20 +327,28 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcE-dM-wnJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="lcE-dM-wnJ" firstAttribute="top" secondItem="GVU-4M-BxN" secondAttribute="top" id="5tv-xQ-FkR"/>
+                                                <constraint firstItem="lcE-dM-wnJ" firstAttribute="leading" secondItem="GVU-4M-BxN" secondAttribute="leading" id="Nva-A1-h1B"/>
                                                 <constraint firstItem="3Ap-D7-WGM" firstAttribute="leading" secondItem="GVU-4M-BxN" secondAttribute="leading" id="TFh-Xv-xvk"/>
                                                 <constraint firstAttribute="trailing" secondItem="8Vg-eo-npE" secondAttribute="trailing" id="TM3-2g-dUx"/>
                                                 <constraint firstItem="8Vg-eo-npE" firstAttribute="leading" secondItem="GVU-4M-BxN" secondAttribute="leading" id="WHQ-Qf-TST"/>
+                                                <constraint firstAttribute="bottom" secondItem="lcE-dM-wnJ" secondAttribute="bottom" id="WOc-JM-cuM"/>
                                                 <constraint firstItem="8Vg-eo-npE" firstAttribute="top" secondItem="GVU-4M-BxN" secondAttribute="top" id="XWi-5P-0u2"/>
                                                 <constraint firstAttribute="bottom" secondItem="8Vg-eo-npE" secondAttribute="bottom" id="Y30-2F-X0M"/>
                                                 <constraint firstAttribute="bottom" secondItem="3Ap-D7-WGM" secondAttribute="bottom" id="YTB-Ce-oaw"/>
                                                 <constraint firstAttribute="trailing" secondItem="3Ap-D7-WGM" secondAttribute="trailing" id="bO1-qn-7Jl"/>
+                                                <constraint firstAttribute="trailing" secondItem="lcE-dM-wnJ" secondAttribute="trailing" id="hNP-qo-a4h"/>
                                                 <constraint firstItem="3Ap-D7-WGM" firstAttribute="top" secondItem="GVU-4M-BxN" secondAttribute="top" id="s59-gg-Vqh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="cityImgView" destination="8Vg-eo-npE" id="ocA-M3-Vmj"/>
+                                            <outlet property="goToDetailCity" destination="lcE-dM-wnJ" id="SX5-M5-5Ay"/>
                                             <outlet property="selectedCityNameLabel" destination="3Ap-D7-WGM" id="b2h-9t-Jkf"/>
                                         </connections>
                                     </tableViewCell>
@@ -530,6 +538,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POY-rx-mvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2221.5999999999999" y="-149.77511244377811"/>
+        </scene>
+        <!--Detail City Weather View Controller-->
+        <scene sceneID="iCd-5v-PbC">
+            <objects>
+                <viewController storyboardIdentifier="DetailCityWeatherViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mel-mU-gmJ" customClass="DetailCityWeatherViewController" customModule="MVVM_WeatherWithFiveDays" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="53s-cW-ySa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="NbU-MD-ie3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fbg-1x-0RE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222" y="528"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tvr-EU-KB8">
