@@ -312,7 +312,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XLc-qe-Fum"/>
+                    <navigationItem key="navigationItem" id="XLc-qe-Fum">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="nfG-zd-BXK">
+                            <connections>
+                                <action selector="addBarBtn:" destination="BYZ-38-t0r" id="yEB-b8-9GM"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentCityImgView" destination="Ac0-e7-Ma8" id="9gZ-sw-O3y"/>
                         <outlet property="currentCityNameLabel" destination="JSM-bC-hBm" id="AWN-vM-IXD"/>
@@ -332,11 +338,27 @@
                         <outlet property="thirdDayWeatherIconImgView" destination="5kc-Oq-V5a" id="1FH-Wr-283"/>
                         <outlet property="thirdDayWeatherLabel" destination="5Aq-RR-qqD" id="0Fh-JZ-Soq"/>
                         <outlet property="thirdDayWeatherTimeLabel" destination="GBd-BX-7q4" id="OuQ-D4-0bc"/>
+                        <segue destination="1uL-xl-Nxf" kind="show" identifier="SearchVC" id="6ny-3d-5Mi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="132.68365817091455"/>
+        </scene>
+        <!--Search Bar View Controller-->
+        <scene sceneID="ZvA-8D-t9d">
+            <objects>
+                <viewController id="1uL-xl-Nxf" customClass="SearchBarViewController" customModule="MVVM_WeatherWithFiveDays" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EbA-XW-5rd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="xfZ-fr-vBy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="POY-rx-mvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2222" y="-149"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tvr-EU-KB8">

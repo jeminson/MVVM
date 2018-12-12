@@ -50,6 +50,16 @@ class HomeViewController: UIViewController {
         getCurrentCityByName(currentCityName: currentCity)
         getCurrentCityWeather(currentCityLat: currentCityLatitude, currentCitylong: currentCityLongitude)
     }
+    
+    
+    // MARK: - IBAction
+    @IBAction func addBarBtn(_ sender: UIBarButtonItem) {
+        DispatchQueue.main.async {
+            self.performSegue(withIdentifier: "SearchVC", sender: nil)
+        }
+    }
+    
+    
 }
 
 extension HomeViewController {
