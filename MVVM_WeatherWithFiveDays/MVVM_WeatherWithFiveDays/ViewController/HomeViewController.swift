@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import SVProgressHUD
 
 class HomeViewController: UIViewController {
 
@@ -34,8 +35,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var currentCityNameLabel: UILabel!
     @IBOutlet weak var currentCityImgView: UIImageView!
 
+    @IBOutlet weak var selectedCityTableView: UITableView!
+    
     let cityViewModel = CityViewModel()
     let weatherViewModel = WeatherViewModel()
+    var delegate: CityDelegate?
     
     // For now, Hard code to <Chicago> since <St. Charles> is not working"
     let currentCity : String = "Chicago"
@@ -51,6 +55,12 @@ class HomeViewController: UIViewController {
         getCurrentCityWeather(currentCityLat: currentCityLatitude, currentCitylong: currentCityLongitude)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let dest = segue.destination as? SearchBarViewController {
+            dest.delegate = self
+        }
+    }
+    
     // MARK: - IBAction
     @IBAction func addBarBtn(_ sender: UIBarButtonItem) {
         DispatchQueue.main.async {
@@ -60,6 +70,7 @@ class HomeViewController: UIViewController {
     
 }
 
+// MARK: - Functions
 extension HomeViewController {
     func getCurrentCityByName(currentCityName: String) {
         cityViewModel.getCityImage(cityName: currentCityName) { (cityImgUrl) in
@@ -98,5 +109,41 @@ extension HomeViewController {
             }
             
         }
+    }
+}
+
+
+extension HomeViewController: CityDelegate {
+    func cityValue(cityInfo: CityModel) {
+        cityViewModel.setSelectedCity(selectedCities: cityInfo)
+        
+        DispatchQueue.main.async {
+            self.selectedCityTableView.reloadData()
+        }
+    }
+}
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return cityViewModel.getSelectedCityCount()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell") as! HomeTableViewCell
+        
+        let city = cityViewModel.getSelectedCity(atIndex: indexPath.row)
+        cell.selectedCityNameLabel.text = city.cityName!
+        
+        SVProgressHUD.show(withStatus: "Loading Image...")
+        cityViewModel.getCityImage(cityName: city.cityName!) { (cityImgUrl) in
+            DispatchQueue.main.async {
+                SVProgressHUD.dismiss()
+                cell.cityImgView.kf.setImage(with: cityImgUrl as? Resource)
+            }
+        }
+
+        
+        
+        return cell
     }
 }

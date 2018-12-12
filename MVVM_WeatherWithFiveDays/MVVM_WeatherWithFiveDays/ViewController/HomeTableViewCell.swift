@@ -1,5 +1,5 @@
 //
-//  SearchBarTableViewCell.swift
+//  HomeTableViewCell.swift
 //  MVVM_WeatherWithFiveDays
 //
 //  Created by Je Min Son on 12/12/18.
@@ -8,11 +8,10 @@
 
 import UIKit
 
-class SearchBarTableViewCell: UITableViewCell {
+class HomeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var addBtn: UIButton!
-    @IBOutlet weak var countryLabel: UILabel!
-    @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var cityImgView: UIImageView!
+    @IBOutlet weak var selectedCityNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
