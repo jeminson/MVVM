@@ -37,7 +37,7 @@ class HomeViewController: UIViewController {
     let cityViewModel = CityViewModel()
     let weatherViewModel = WeatherViewModel()
     
-    // For now, Hard code to <Chicago> since <St. Charles> is not working "
+    // For now, Hard code to <Chicago> since <St. Charles> is not working"
     let currentCity : String = "Chicago"
     let currentCityLatitude : Double = 41.87
     let currentCityLongitude : Double = -87.63
@@ -45,12 +45,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // For now, Hard code to <Chicago> since <St. Charles> is not working "
+        // For now, Hard code to <Chicago> since <St. Charles> is not working"
         currentCityNameLabel.text = currentCity
         getCurrentCityByName(currentCityName: currentCity)
         getCurrentCityWeather(currentCityLat: currentCityLatitude, currentCitylong: currentCityLongitude)
     }
-    
     
     // MARK: - IBAction
     @IBAction func addBarBtn(_ sender: UIBarButtonItem) {
@@ -58,7 +57,6 @@ class HomeViewController: UIViewController {
             self.performSegue(withIdentifier: "SearchVC", sender: nil)
         }
     }
-    
     
 }
 

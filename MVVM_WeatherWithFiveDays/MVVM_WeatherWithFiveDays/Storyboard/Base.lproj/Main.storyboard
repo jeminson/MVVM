@@ -352,13 +352,93 @@
                     <view key="view" contentMode="scaleToFill" id="EbA-XW-5rd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R1a-Gc-vRc">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchBarTableViewCell" rowHeight="100" id="1D4-XM-JqL" customClass="SearchBarTableViewCell" customModule="MVVM_WeatherWithFiveDays" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1D4-XM-JqL" id="gBu-xg-yEQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSM-wi-FBX">
+                                                    <rect key="frame" x="16" y="16" width="80" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUz-0G-kBX">
+                                                    <rect key="frame" x="112" y="16" width="207" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doR-Ig-5GF">
+                                                    <rect key="frame" x="16" y="56" width="45" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NFk-xl-vHI">
+                                                    <rect key="frame" x="77" y="56" width="242" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DSM-wi-FBX" firstAttribute="leading" secondItem="gBu-xg-yEQ" secondAttribute="leading" constant="16" id="EIk-gc-Oat"/>
+                                                <constraint firstItem="doR-Ig-5GF" firstAttribute="leading" secondItem="gBu-xg-yEQ" secondAttribute="leading" constant="16" id="Lac-o8-1lL"/>
+                                                <constraint firstItem="NFk-xl-vHI" firstAttribute="top" secondItem="DSM-wi-FBX" secondAttribute="bottom" constant="16" id="Mf3-Lx-Abi"/>
+                                                <constraint firstItem="NFk-xl-vHI" firstAttribute="leading" secondItem="doR-Ig-5GF" secondAttribute="trailing" constant="16" id="Sxn-ap-aHb"/>
+                                                <constraint firstItem="jUz-0G-kBX" firstAttribute="top" secondItem="gBu-xg-yEQ" secondAttribute="top" constant="16" id="XeD-Lu-P1U"/>
+                                                <constraint firstItem="doR-Ig-5GF" firstAttribute="top" secondItem="DSM-wi-FBX" secondAttribute="bottom" constant="16" id="aWb-QY-0zL"/>
+                                                <constraint firstAttribute="bottom" secondItem="doR-Ig-5GF" secondAttribute="bottom" constant="19.5" id="hf2-qq-UW4"/>
+                                                <constraint firstItem="jUz-0G-kBX" firstAttribute="leading" secondItem="DSM-wi-FBX" secondAttribute="trailing" constant="16" id="kpJ-Ph-tvN"/>
+                                                <constraint firstItem="DSM-wi-FBX" firstAttribute="top" secondItem="gBu-xg-yEQ" secondAttribute="top" constant="16" id="pcg-wZ-krY"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cityLabel" destination="NFk-xl-vHI" id="ZQa-Cq-12Z"/>
+                                            <outlet property="countryLabel" destination="jUz-0G-kBX" id="PXn-Pz-hce"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="1uL-xl-Nxf" id="NlM-rp-Z50"/>
+                                </connections>
+                            </tableView>
+                            <searchBar contentMode="redraw" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rcL-M6-iIu">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1uL-xl-Nxf" id="KL8-AG-aw3"/>
+                                </connections>
+                            </searchBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="rcL-M6-iIu" firstAttribute="top" secondItem="xfZ-fr-vBy" secondAttribute="top" id="Mfi-8U-pDN"/>
+                            <constraint firstItem="R1a-Gc-vRc" firstAttribute="top" secondItem="rcL-M6-iIu" secondAttribute="bottom" id="Oqp-tB-qAR"/>
+                            <constraint firstItem="R1a-Gc-vRc" firstAttribute="leading" secondItem="xfZ-fr-vBy" secondAttribute="leading" id="UCb-vP-L5v"/>
+                            <constraint firstItem="rcL-M6-iIu" firstAttribute="leading" secondItem="xfZ-fr-vBy" secondAttribute="leading" id="iDL-Oj-kOI"/>
+                            <constraint firstItem="R1a-Gc-vRc" firstAttribute="bottom" secondItem="xfZ-fr-vBy" secondAttribute="bottom" id="lgY-Bc-Qd7"/>
+                            <constraint firstItem="rcL-M6-iIu" firstAttribute="trailing" secondItem="xfZ-fr-vBy" secondAttribute="trailing" id="tRG-00-Ft5"/>
+                            <constraint firstItem="R1a-Gc-vRc" firstAttribute="trailing" secondItem="xfZ-fr-vBy" secondAttribute="trailing" id="wcb-VS-HRQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="xfZ-fr-vBy"/>
                     </view>
+                    <connections>
+                        <outlet property="citySearchBar" destination="rcL-M6-iIu" id="DcD-lQ-VEc"/>
+                        <outlet property="cityTableView" destination="R1a-Gc-vRc" id="0N2-SG-e2H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="POY-rx-mvz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2222" y="-149"/>
+            <point key="canvasLocation" x="2221.5999999999999" y="-149.77511244377811"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tvr-EU-KB8">
