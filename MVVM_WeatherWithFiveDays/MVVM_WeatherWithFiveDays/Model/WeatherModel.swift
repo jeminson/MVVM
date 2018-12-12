@@ -18,5 +18,6 @@ struct WeatherModel {
     var weatherMain: String?
     var windSpeed: Double?
     var weatherIcon: URL?
+    var time: String?
     
 }
