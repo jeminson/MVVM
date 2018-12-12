@@ -11,6 +11,22 @@ import Kingfisher
 
 class HomeViewController: UIViewController {
 
+    
+    @IBOutlet weak var fifthDayWeatherLabel: UILabel!
+    @IBOutlet weak var fifthDayWeatherIconImgView: UIImageView!
+    
+    
+    @IBOutlet weak var fourthDayWeatherLabel: UILabel!
+    @IBOutlet weak var fourthDayWeatherIconImgView: UIImageView!
+    
+    
+    @IBOutlet weak var thirdDayWeatherLabel: UILabel!
+    @IBOutlet weak var thirdDayWeatherIconImgView: UIImageView!
+    
+    
+    @IBOutlet weak var secondDayWeatherLabel: UILabel!
+    @IBOutlet weak var secondDayWeatherIconImgView: UIImageView!
+    
     @IBOutlet weak var currentWeatherIconImgView: UIImageView!
     @IBOutlet weak var currentWeatherWindSpeedLabel: UILabel!
     @IBOutlet weak var currentWeatherTempLabel: UILabel!
@@ -49,11 +65,24 @@ extension HomeViewController {
             self.weatherViewModel.weatherInfo = weatherModel 
             
             DispatchQueue.main.async {
-                self.currentWeatherLabel.text = self.weatherViewModel.weatherInfo[0].firstDayWeatherMain!
-                self.currentWeatherTempLabel.text = String(self.weatherViewModel.weatherInfo[0].firstDayTemp!)
-                self.currentWeatherWindSpeedLabel.text = String(self.weatherViewModel.weatherInfo[0].firstDayWindSpeed!)
+                self.currentWeatherLabel.text = self.weatherViewModel.weatherInfo[0].weatherMain!
+                self.currentWeatherTempLabel.text = String(self.weatherViewModel.weatherInfo[0].temp!)
+                self.currentWeatherWindSpeedLabel.text = String(self.weatherViewModel.weatherInfo[0].windSpeed!)
                 
-                self.currentWeatherIconImgView.kf.setImage(with: self.weatherViewModel.weatherInfo[0].firstDayWeatherIcon)
+                self.currentWeatherIconImgView.kf.setImage(with: self.weatherViewModel.weatherInfo[0].weatherIcon)
+                
+                
+                self.secondDayWeatherLabel.text = self.weatherViewModel.weatherInfo[1].weatherMain!
+                self.secondDayWeatherIconImgView.kf.setImage(with: self.weatherViewModel.weatherInfo[1].weatherIcon)
+                
+                self.thirdDayWeatherLabel.text = self.weatherViewModel.weatherInfo[2].weatherMain!
+                self.thirdDayWeatherIconImgView.kf.setImage(with: self.weatherViewModel.weatherInfo[2].weatherIcon)
+                
+                self.fourthDayWeatherLabel.text = self.weatherViewModel.weatherInfo[3].weatherMain!
+                self.fourthDayWeatherIconImgView.kf.setImage(with: self.weatherViewModel.weatherInfo[3].weatherIcon)
+                
+                self.fifthDayWeatherLabel.text = self.weatherViewModel.weatherInfo[4].weatherMain!
+                self.fifthDayWeatherIconImgView.kf.setImage(with: self.weatherViewModel.weatherInfo[4].weatherIcon)
             }
             
         }

@@ -14,9 +14,9 @@ struct WeatherModel {
     var latitude: Double?
     var longitude: Double?
     
-    var firstDayTemp : Double?
-    var firstDayWeatherMain: String?
-    var firstDayWindSpeed: Double?
-    var firstDayWeatherIcon: URL?
+    var temp : Double?
+    var weatherMain: String?
+    var windSpeed: Double?
+    var weatherIcon: URL?
     
 }
