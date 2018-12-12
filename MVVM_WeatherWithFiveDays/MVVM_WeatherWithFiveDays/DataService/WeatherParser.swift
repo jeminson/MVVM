@@ -8,6 +8,8 @@
 
 import Foundation
 
+let weatherIconString = "http://openweathermap.org/img/w/"
+
 class WeatherParser {
     class func parserWeatherInformation(weatherInfoResponseObj: Dictionary<String, Any>) -> [WeatherModel] {
         var weatherInfoDict: [WeatherModel] = []
@@ -30,13 +32,15 @@ class WeatherParser {
         print("Weahter: \(firstDayWeatherMain!)")
         let firstDayWeatherIcon = firstDayWeatherFirstArraayIndex["icon"] as? String
         print("Icon: \(firstDayWeatherIcon!)")
+        let firstDayWeatherIconUrl = URL(string: "\(weatherIconString)\(firstDayWeatherIcon!).png")
+        print("Icon Url: \(firstDayWeatherIconUrl!)")
         let firstDayWeatherWind = firstDayWeatherList["wind"] as? Dictionary<String, Any>
         let firstDayWindSpeed = firstDayWeatherWind!["speed"] as? Double
         print("Speed: \(firstDayWindSpeed!)")
         
         
-        let firstDayWeatherModel = WeatherModel.init(id: cityId, cityName: name, latitude: coordinate!["lat"], longitude: coordinate!["lon"], firstDayTemp: firstDayWeatherTemp, firstDayWeatherMain: firstDayWeatherMain, firstDayWindSpeed: firstDayWindSpeed, firstDayWeatherIcon: firstDayWeatherIcon)
-        
+        let firstDayWeatherModel = WeatherModel.init(id: cityId, cityName: name, latitude: coordinate!["lat"], longitude: coordinate!["lon"], firstDayTemp: firstDayWeatherTemp, firstDayWeatherMain: firstDayWeatherMain, firstDayWindSpeed: firstDayWindSpeed, firstDayWeatherIcon: firstDayWeatherIconUrl)
+
         weatherInfoDict.append(firstDayWeatherModel)
 //
 //        let secondDayWeatherInfo = list![8] as? Dictionary<String, Any>

@@ -17,6 +17,6 @@ struct WeatherModel {
     var firstDayTemp : Double?
     var firstDayWeatherMain: String?
     var firstDayWindSpeed: Double?
-    var firstDayWeatherIcon: String?
+    var firstDayWeatherIcon: URL?
     
 }

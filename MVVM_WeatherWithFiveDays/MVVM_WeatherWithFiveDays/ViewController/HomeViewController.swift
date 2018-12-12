@@ -52,6 +52,8 @@ extension HomeViewController {
                 self.currentWeatherLabel.text = self.weatherViewModel.weatherInfo[0].firstDayWeatherMain!
                 self.currentWeatherTempLabel.text = String(self.weatherViewModel.weatherInfo[0].firstDayTemp!)
                 self.currentWeatherWindSpeedLabel.text = String(self.weatherViewModel.weatherInfo[0].firstDayWindSpeed!)
+                
+                self.currentWeatherIconImgView.kf.setImage(with: self.weatherViewModel.weatherInfo[0].firstDayWeatherIcon)
             }
             
         }

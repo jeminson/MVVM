@@ -11,8 +11,6 @@ import Foundation
 let weatherAPIString = "https://api.openweathermap.org/data/2.5/forecast?"
 let weatherAPIKey = "e559c1f4452715302985fd818a67eced"
 
-// https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=e559c1f4452715302985fd818a67eced
-
 class WeatherAPIHandler: NSObject {
     // Singleton class
     static let sharedInstance = WeatherAPIHandler()
@@ -28,6 +26,7 @@ class WeatherAPIHandler: NSObject {
                         if let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: []) as? Dictionary<String, Any> {
                             
                             let weatherModel = WeatherParser.parserWeatherInformation(weatherInfoResponseObj: jsonResponse)
+                        
                             
                             completion(weatherModel)
                         } else {
@@ -40,7 +39,7 @@ class WeatherAPIHandler: NSObject {
             }
             task.resume()
         }
-        
     }
+
 
 }
