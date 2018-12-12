@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1B1D9F666F7086E4EBF6C9AB /* Pods_MVVM_WeatherWithFiveDays.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E875FCAF32D3B921FA706777 /* Pods_MVVM_WeatherWithFiveDays.framework */; };
+		A21B54A721C0CF6000634B78 /* CityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21B54A621C0CF6000634B78 /* CityModel.swift */; };
+		A2D9278721C0DA01006F4DD8 /* CityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9278621C0DA01006F4DD8 /* CityViewModel.swift */; };
+		A2D9278921C0DB4A006F4DD8 /* CityAPIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9278821C0DB4A006F4DD8 /* CityAPIHandler.swift */; };
+		A2D9278B21C0E2BF006F4DD8 /* CityImageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9278A21C0E2BF006F4DD8 /* CityImageParser.swift */; };
+		A2D9278D21C0EB5F006F4DD8 /* city.list.min.json in Resources */ = {isa = PBXBuildFile; fileRef = A2D9278C21C0EB5F006F4DD8 /* city.list.min.json */; };
 		A2FC518021BF72CF005F38A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FC517F21BF72CF005F38A7 /* AppDelegate.swift */; };
 		A2FC518221BF72CF005F38A7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2FC518121BF72CF005F38A7 /* HomeViewController.swift */; };
 		A2FC518521BF72CF005F38A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2FC518321BF72CF005F38A7 /* Main.storyboard */; };
@@ -19,6 +24,11 @@
 /* Begin PBXFileReference section */
 		02102739A1505C4359992F6B /* Pods-MVVM_WeatherWithFiveDays.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_WeatherWithFiveDays.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM_WeatherWithFiveDays/Pods-MVVM_WeatherWithFiveDays.debug.xcconfig"; sourceTree = "<group>"; };
 		998C1684D4BC591BE7E3394C /* Pods-MVVM_WeatherWithFiveDays.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MVVM_WeatherWithFiveDays.release.xcconfig"; path = "Pods/Target Support Files/Pods-MVVM_WeatherWithFiveDays/Pods-MVVM_WeatherWithFiveDays.release.xcconfig"; sourceTree = "<group>"; };
+		A21B54A621C0CF6000634B78 /* CityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityModel.swift; sourceTree = "<group>"; };
+		A2D9278621C0DA01006F4DD8 /* CityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewModel.swift; sourceTree = "<group>"; };
+		A2D9278821C0DB4A006F4DD8 /* CityAPIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityAPIHandler.swift; sourceTree = "<group>"; };
+		A2D9278A21C0E2BF006F4DD8 /* CityImageParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityImageParser.swift; sourceTree = "<group>"; };
+		A2D9278C21C0EB5F006F4DD8 /* city.list.min.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = city.list.min.json; sourceTree = "<group>"; };
 		A2FC517C21BF72CF005F38A7 /* MVVM_WeatherWithFiveDays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MVVM_WeatherWithFiveDays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2FC517F21BF72CF005F38A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2FC518121BF72CF005F38A7 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +74,9 @@
 			isa = PBXGroup;
 			children = (
 				A2FC517F21BF72CF005F38A7 /* AppDelegate.swift */,
+				A2D9278C21C0EB5F006F4DD8 /* city.list.min.json */,
 				A2FC519221BF72F2005F38A7 /* Storyboard */,
+				A2FC519C21BF7714005F38A7 /* DataService */,
 				A2FC519121BF72E9005F38A7 /* ViewController */,
 				A2FC519321BF72FF005F38A7 /* ViewModel */,
 				A2FC519421BF7307005F38A7 /* Model */,
@@ -95,6 +107,7 @@
 		A2FC519321BF72FF005F38A7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				A2D9278621C0DA01006F4DD8 /* CityViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -102,6 +115,7 @@
 		A2FC519421BF7307005F38A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A21B54A621C0CF6000634B78 /* CityModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -112,6 +126,15 @@
 				A2FC519621BF7392005F38A7 /* Utility.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		A2FC519C21BF7714005F38A7 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				A2D9278821C0DB4A006F4DD8 /* CityAPIHandler.swift */,
+				A2D9278A21C0E2BF006F4DD8 /* CityImageParser.swift */,
+			);
+			path = DataService;
 			sourceTree = "<group>";
 		};
 		E65A022CBA049AC19CECE48B /* Frameworks */ = {
@@ -194,6 +217,7 @@
 				A2FC518A21BF72D1005F38A7 /* LaunchScreen.storyboard in Resources */,
 				A2FC518721BF72D1005F38A7 /* Assets.xcassets in Resources */,
 				A2FC518521BF72CF005F38A7 /* Main.storyboard in Resources */,
+				A2D9278D21C0EB5F006F4DD8 /* city.list.min.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,12 +233,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MVVM_WeatherWithFiveDays/Pods-MVVM_WeatherWithFiveDays-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -251,6 +277,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21B54A721C0CF6000634B78 /* CityModel.swift in Sources */,
+				A2D9278721C0DA01006F4DD8 /* CityViewModel.swift in Sources */,
+				A2D9278B21C0E2BF006F4DD8 /* CityImageParser.swift in Sources */,
+				A2D9278921C0DB4A006F4DD8 /* CityAPIHandler.swift in Sources */,
 				A2FC518221BF72CF005F38A7 /* HomeViewController.swift in Sources */,
 				A2FC518021BF72CF005F38A7 /* AppDelegate.swift in Sources */,
 				A2FC519721BF7392005F38A7 /* Utility.swift in Sources */,

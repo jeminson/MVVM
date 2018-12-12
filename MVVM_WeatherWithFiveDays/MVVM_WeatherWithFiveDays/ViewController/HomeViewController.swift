@@ -7,14 +7,27 @@
 //
 
 import UIKit
+import Kingfisher
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var currentCityImgView: UIImageView!
+    let cityViewModel = CityViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // For now, Hard code to <Chicago> since <St. Charles> is not working "
+        getCurrentCityByName(currentCityName: "Chicago")
     }
-
-
+    
+    func getCurrentCityByName(currentCityName: String) {
+        cityViewModel.getCityImage(cityName: currentCityName) { (cityImgUrl) in
+            DispatchQueue.main.async {
+                self.currentCityImgView.kf.setImage(with: cityImgUrl as? Resource)
+            }
+        }
+    }
+    
 }
 

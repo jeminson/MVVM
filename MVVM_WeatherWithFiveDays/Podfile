@@ -7,5 +7,6 @@ target 'MVVM_WeatherWithFiveDays' do
 
   # Pods for MVVM_WeatherWithFiveDays
   pod 'SVProgressHUD'
+  pod 'Kingfisher'
 
 end
