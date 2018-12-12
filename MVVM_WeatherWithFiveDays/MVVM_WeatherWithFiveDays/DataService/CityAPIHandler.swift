@@ -16,6 +16,27 @@ class CityAPIHandler: NSObject {
     static let sharedInstance = CityAPIHandler()
     private override init() {}
     
+    func getCityInformationFromJSON(completion: @escaping ([CityModel]) -> ()) {
+        DispatchQueue.global().async {
+            if let url = Bundle.main.url(forResource: "city.list", withExtension: "json") {
+                do {
+                    let data = try Data(contentsOf: url)
+                    if let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? Array<Dictionary<String, Any>> {
+                        
+                        let cityModel = CityParser.parseCityInformation(cityInfoResponseObj: jsonResponse)
+                        
+                        completion(cityModel)
+                    } else {
+                        completion([])
+                    }
+                } catch {
+                    completion([])
+                }
+            }
+        }
+    }
+    
+    
     func getCityImageFromUnsplash(cityName: String, completion: @escaping (Any?) -> ()) {
         guard let url = URL(string: "\(cityImgURLString)\(cityName)&client_id=\(cityImgAPIKey)") else {return}
         
@@ -24,7 +45,7 @@ class CityAPIHandler: NSObject {
                 do {
                     if let jsonResponse = try JSONSerialization.jsonObject(with: data!, options: []) as? Dictionary<String, Any> {
                         
-                        let cityImgUrlString = CityImageParser.parseCityImageResponse(cityImgResponseObj: jsonResponse)
+                        let cityImgUrlString = CityParser.parseCityImageResponse(cityImgResponseObj: jsonResponse)
                         let cityImgUrl = URL(string: "\(cityImgUrlString).png")
                         completion(cityImgUrl)
                     } else {

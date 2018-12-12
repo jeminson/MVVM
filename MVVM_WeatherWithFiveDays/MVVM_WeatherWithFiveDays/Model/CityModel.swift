@@ -9,7 +9,9 @@
 import Foundation
 
 struct CityModel {
+    var cityId: Int?
     var cityName: String?
+    var country: String?
     var latitude: Double?
     var longitude: Double?
 }

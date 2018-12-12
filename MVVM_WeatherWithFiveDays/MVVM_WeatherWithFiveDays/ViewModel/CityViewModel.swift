@@ -10,6 +10,16 @@ import Foundation
 
 class CityViewModel {
     
+    var allCityModels : [CityModel] = []
+    
+    func getAllCityInfo(completion: @escaping ([CityModel]) -> ()) {
+        CityAPIHandler.sharedInstance.getCityInformationFromJSON { (cityModels) in
+            self.allCityModels = cityModels
+            
+            completion(self.allCityModels)
+        }
+    }
+    
     func getCityImage(cityName: String, completion: @escaping (Any?) -> ()) {
         CityAPIHandler.sharedInstance.getCityImageFromUnsplash(cityName: cityName) { (cityImgUrl) in
             completion(cityImgUrl)
