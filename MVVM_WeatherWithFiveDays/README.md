@@ -4,5 +4,4 @@
 
 ## Screenshots for each screen
 - Home View 
-![alt text](https://github.com/jeminson/MVVM/blob/master/MVVM_WeatherWithFiveDays/Images/HomeScreen.png | width=100)
-
+<img src="https://github.com/..." data-canonical-src="https://github.com/jeminson/MVVM/blob/master/MVVM_WeatherWithFiveDays/Images/HomeScreen.png" width="200" height="400" />
