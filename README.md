@@ -4,7 +4,7 @@
 - Getting CoreLocation for the device (Displays Current location)
 
 ## MVVM_WeatherApp (Basic)
-- Using Open Weather API (openweathermap.org)
+- Using Open Weather API - Current Weather Data [openweathermap.org](https://openweathermap.org/current)
 
 ## MVVM_WeatherWithFiveDays (Modified Version)
-- Using Open Weather API with five days (openweathermap.org)
+- Using Open Weather API - Five days Weather Data [openweathermap.org](https://openweathermap.org/forecast5)
