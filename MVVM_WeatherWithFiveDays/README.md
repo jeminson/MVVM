@@ -1,5 +1,7 @@
 # MVVM Design Pattern 
 - Weather App displaying 5 day forecast
+- Using [Unsplash](https://unsplash.com/) for City Image
+- Using [OpenWeatherMap](https://openweathermap.org/) for Weather Forecast
 
 
 ## Screenshots for each screen
